@@ -1,7 +1,11 @@
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
-
+const headers = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "Content-Type",
+  "Access-Control-Allow-Methods": "GET, POST,",
+};
 const handler = async (event) => {
   if (event.body) {
     const urlData = JSON.parse(event.body);
@@ -14,6 +18,7 @@ const handler = async (event) => {
 
     return {
       statusCode: 200,
+      headers,
       body: JSON.stringify(response),
     };
   }
