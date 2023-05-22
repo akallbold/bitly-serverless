@@ -21,3 +21,9 @@
   ## more info on configuring this file: https://docs.netlify.com/configure-builds/file-based-configuration/
 [functions]
   node_bundler = "esbuild"
+
+  [[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
