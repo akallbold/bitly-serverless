@@ -18,7 +18,7 @@ const handler = async (event) => {
         longUrl: urlData.fullUrl,
       },
     });
-    const shortUrl = `${NOTBITLY_BASEURL}/${response.id}`;
+    const shortUrl = `${baseUrl}/${response.id}`;
     return {
       headers,
       statusCode: 200,
