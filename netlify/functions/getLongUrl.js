@@ -2,8 +2,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 const headers = {
-  "Access-Control-Allow-Origin": "*",
-  // "Access-Control-Allow-Origin": "https://shantellsansnotes.com",
+  "Access-Control-Allow-Origin": "https://notbitly.com",
   "Access-Control-Allow-Methods": "POST, OPTION",
 };
 
