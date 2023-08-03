@@ -5,6 +5,8 @@ const headers = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "POST, OPTION",
 };
+const baseUrl = process.env.NOTBITLY_BASEURL;
+
 const handler = async (event) => {
   if (event.body) {
     const urlData = JSON.parse(event.body);
@@ -14,11 +16,11 @@ const handler = async (event) => {
         longUrl: urlData.fullUrl,
       },
     });
-
+    const shortUrl = `${NOTBITLY_BASEURL}/${response.id}`;
     return {
       statusCode: 200,
       headers,
-      body: JSON.stringify(response),
+      body: JSON.stringify({ response, shortUrl }),
     };
   }
   return {

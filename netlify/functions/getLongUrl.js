@@ -12,6 +12,7 @@ const handler = async (event) => {
     });
 
     return {
+      headers: { "access-control-allow-origin": "*" },
       statusCode: 200,
       body: JSON.stringify(siteData),
     };
